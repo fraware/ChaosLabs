@@ -71,7 +71,7 @@ Update your manifests with `imagePullSecrets` if necessary.
 You can test pulling the image manually on a node (if accessible) to ensure itâ€™s available:
    ```bash
    docker pull your-dockerhub-username/chaos-controller:latest
-
+    ```
 ## Experiment Failures
 
 ### Symptoms:
@@ -82,7 +82,8 @@ You can test pulling the image manually on a node (if accessible) to ensure itâ€
 1. **Check Controller Logs:**
    ```bash
    kubectl logs deployment/chaos-controller -n chaoslabs
-
+    ```
+   
 Look for errors related to JSON parsing, scheduling, or communication with agents.
 
 2. **Verify Experiment Request Format:**
@@ -95,7 +96,8 @@ Ensure that your JSON payloads conform to the expected schema. For example:
       "duration": 15,
       "cpu_workers": 4
     }
-
+    ```
+   
 3. **Examine Network Connectivity:**
 If dispatching to multiple agents, verify that the endpoints specified in `AGENT_ENDPOINTS` are reachable from the controller pod.
 
@@ -109,7 +111,7 @@ If dispatching to multiple agents, verify that the endpoints specified in `AGENT
 Inside the agent container, try running a command like:
    ```bash
    tc qdisc show dev eth0
-
+    ```
 This helps verify if `tc` commands are being executed.
 
 2. **Check Privileges:**
@@ -131,7 +133,7 @@ Ensure that the experiment duration is sufficient to observe the effects.
 Access the `/metrics` endpoint of your controller or agent directly:
    ```bash
    curl http://<pod-ip>:8080/metrics
-
+    ```
 Ensure that custom metrics (e.g., `controller_experiment_total`) are present.
 
 2. **Verify Prometheus Annotations:**
@@ -140,7 +142,7 @@ Confirm that your Kubernetes manifests include annotations:
 annotations:
   prometheus.io/scrape: "true"
   prometheus.io/port: "8080"
-
+    ```
 3. **Prometheus Configuration:**
 Check your Prometheus configuration to ensure it is scraping the correct namespaces and endpoints.
 
@@ -175,7 +177,7 @@ Make sure your tracing configuration matches your deployment (e.g., endpoints, s
 
    ```bash
     kubectl logs deployment/chaos-dashboard -n chaoslabs
-
+    ```
 Look for errors in the Flask (or Node.js) logs.
 
 2. **API Connectivity:**
@@ -192,7 +194,7 @@ Ensure that the dashboard is configured to connect to the correct endpoints for 
 Temporarily expose pod ports to your local machine to test endpoints:
    ```bash
    kubectl port-forward deployment/chaos-controller 8080:8080 -n chaoslabs
-
+    ```
 - **Incremental Testing:**
 Test individual components (controller, agent, dashboard) locally before integrating them.
 
