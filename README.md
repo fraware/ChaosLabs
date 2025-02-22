@@ -1,4 +1,4 @@
-# ChaosLab: A Chaos Engineering Toolkit
+# ChaosLabs: A Chaos Engineering Toolkit
 
 ChaosLab is an open-source toolkit designed for chaos engineering experiments in distributed systems. With ChaosLab you can simulate network faults, resource starvation, and process failures across multiple agents and clusters. The system comprises three main components:
 
