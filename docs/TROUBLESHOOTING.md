@@ -38,7 +38,7 @@ Look at the events section in `kubectl describe` output to identify issues such 
 
 3. **Inspect Logs:**
    ```bash
-kubectl logs <pod-name> -n chaoslabs
+   kubectl logs <pod-name> -n chaoslabs
     ```
 Look for error messages that may indicate what’s causing the pod to crash.
 
@@ -62,7 +62,7 @@ If working with a local cluster (e.g., Minikube or Docker Desktop), either load 
 3. **Check Docker Hub/Registry Credentials:**
 If using a private registry, confirm that your cluster is configured with the proper image pull secrets:
    ```bash
-kubectl get secrets -n chaoslabs
+   kubectl get secrets -n chaoslabs
     ```
 
 Update your manifests with `imagePullSecrets` if necessary.
