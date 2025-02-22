@@ -75,18 +75,18 @@ For detailed design diagrams and further documentation, please visit our [Wiki](
 
 - Controller: 
    ```bash
-cd controller
-go run main.go
+   cd controller
+   go run main.go
 
 - Agent: 
    ```bash
-cd agent
-go run main.go
+   cd agent
+   go run main.go
 
 - Dashboard: 
    ```bash
-cd dashboard
-python app.py
+   cd dashboard
+   python app.py
 
 3. **Access the Dashboard:** Open your browser at http://localhost:5500.
 
@@ -98,11 +98,11 @@ Please refer to the Kubernetes Documentation for detailed instructions on deploy
 Send a POST request to the controller’s `/start` endpoint. For example, to run a CPU stress test:
    ```bash
 curl -X POST -H "Content-Type: application/json" -d '{
-  "name": "CPU Stress Test",
-  "description": "Runs CPU stress with 4 workers for 15s",
-  "experiment_type": "cpu-stress",
-  "duration": 15,
-  "cpu_workers": 4
+    "name": "CPU Stress Test",
+    "description": "Runs CPU stress with 4 workers for 15s",
+    "experiment_type": "cpu-stress",
+    "duration": 15,
+    "cpu_workers": 4
 }' http://localhost:8080/start
 ```
 
