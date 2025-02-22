@@ -43,7 +43,7 @@ Ensure that new features or changes are reflected in the documentation.
   - **Issues & Discussions:**
 Use GitHub Issues to report bugs, request features, or ask questions.
 
-  - **Pull Requests:
+  - **Pull Requests:**
 Reference relevant issues (e.g., "Closes #123") in your PR descriptions.
 
   - **Feedback:**
