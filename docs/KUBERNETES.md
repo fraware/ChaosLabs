@@ -156,9 +156,9 @@ kubectl delete namespace chaoslab
 ```
 
 ## Additional Resources
-- [Kubernetes Official Documentation]([https://kubernetes.io/docs/tasks/tools/](https://kubernetes.io/docs/home/))
-- [Prometheus Documentation]([https://kubernetes.io/docs/tasks/tools/](https://prometheus.io/docs/introduction/overview/))
-- [Grafana Documentation]([https://kubernetes.io/docs/tasks/tools/](https://grafana.com/docs/))
-- [Jaeger Documentation]([https://kubernetes.io/docs/tasks/tools/](https://www.jaegertracing.io/docs/1.18/))
+- [Kubernetes Official Documentation](https://kubernetes.io/docs/home/)
+- [Prometheus Documentation](https://prometheus.io/docs/introduction/overview/)
+- [Grafana Documentation](https://grafana.com/docs/)
+- [Jaeger Documentation](https://www.jaegertracing.io/docs/1.18/)
 
 For any additional questions or issues, please open an issue on our GitHub Issues page.
