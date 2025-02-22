@@ -139,9 +139,9 @@ Ensure that custom metrics (e.g., `controller_experiment_total`) are present.
 2. **Verify Prometheus Annotations:**
 Confirm that your Kubernetes manifests include annotations:
    ```yaml
-annotations:
-  prometheus.io/scrape: "true"
-  prometheus.io/port: "8080"
+   annotations:
+      prometheus.io/scrape: "true"
+      prometheus.io/port: "8080"
     ```
 3. **Prometheus Configuration:**
 Check your Prometheus configuration to ensure it is scraping the correct namespaces and endpoints.
