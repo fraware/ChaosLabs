@@ -1,0 +1,9 @@
+# infrastructure/Dockerfile.controller
+FROM golang:1.18-alpine
+WORKDIR /app
+COPY controller/go.mod .
+RUN go mod download
+COPY controller/ .
+RUN go build -o chaos-controller .
+EXPOSE 8080
+CMD ["./chaos-controller"]

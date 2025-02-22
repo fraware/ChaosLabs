@@ -1,0 +1,21 @@
+# infrastructure/k8s/dashboard-deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: chaos-dashboard
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: chaos-dashboard
+  template:
+    metadata:
+      labels:
+        app: chaos-dashboard
+    spec:
+      containers:
+      - name: chaos-dashboard
+        image: chaos-dashboard:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 5500

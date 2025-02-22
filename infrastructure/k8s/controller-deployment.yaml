@@ -1,0 +1,30 @@
+# infrastructure/k8s/controller-deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: chaos-controller
+  namespace: chaoslab
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: chaos-controller
+  template:
+    metadata:
+      labels:
+        app: chaos-controller
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "8080"
+    spec:
+      containers:
+      - name: chaos-controller
+        image: chaos-controller:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
+        env:
+          # Set AGENT_ENDPOINTS to a comma-separated list of agent endpoints.
+          # In a multi-cluster scenario, these endpoints point to agents running in different clusters.
+          - name: AGENT_ENDPOINTS
+            value: "http://chaos-agent.chaoslab.svc.cluster.local:9090/inject, http://agent-secondary.cluster.local:9090/inject"

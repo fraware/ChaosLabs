@@ -1,0 +1,58 @@
+{
+    "dashboard": {
+      "id": null,
+      "title": "ChaosLab Metrics",
+      "panels": [
+        {
+          "type": "graph",
+          "title": "Controller Experiment Count",
+          "targets": [
+            {
+              "expr": "controller_experiment_total",
+              "legendFormat": "Experiments",
+              "refId": "A"
+            }
+          ],
+          "datasource": "Prometheus"
+        },
+        {
+          "type": "graph",
+          "title": "Controller Experiment Duration (s)",
+          "targets": [
+            {
+              "expr": "controller_experiment_duration_seconds",
+              "legendFormat": "Duration",
+              "refId": "A"
+            }
+          ],
+          "datasource": "Prometheus"
+        },
+        {
+          "type": "graph",
+          "title": "Agent Injection Count",
+          "targets": [
+            {
+              "expr": "agent_injection_total",
+              "legendFormat": "Injections",
+              "refId": "A"
+            }
+          ],
+          "datasource": "Prometheus"
+        },
+        {
+          "type": "graph",
+          "title": "Agent Injection Duration (s)",
+          "targets": [
+            {
+              "expr": "agent_injection_duration_seconds",
+              "legendFormat": "Duration",
+              "refId": "A"
+            }
+          ],
+          "datasource": "Prometheus"
+        }
+      ]
+    },
+    "overwrite": true
+  }
+  

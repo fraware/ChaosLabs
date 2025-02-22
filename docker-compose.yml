@@ -1,0 +1,27 @@
+version: "3.8"
+services:
+  controller:
+    image: fraware/chaos-controller:latest
+    build:
+      context: .
+      dockerfile: infrastructure/Dockerfile.controller
+    ports:
+      - "8080:8080"
+    depends_on:
+      - agent
+
+  agent:
+    image: fraware/chaos-agent:latest
+    build:
+      context: .
+      dockerfile: infrastructure/Dockerfile.agent
+    ports:
+      - "9090:9090"
+
+  dashboard:
+    image: fraware/chaos-dashboard:latest
+    build:
+      context: ./dashboard
+      dockerfile: Dockerfile
+    ports:
+      - "5500:5500"

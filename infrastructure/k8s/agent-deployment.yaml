@@ -1,0 +1,27 @@
+# infrastructure/k8s/agent-deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: chaos-agent
+  namespace: chaoslab
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: chaos-agent
+  template:
+    metadata:
+      labels:
+        app: chaos-agent
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "9090"
+    spec:
+      containers:
+      - name: chaos-agent
+        image: chaos-agent:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 9090
+        securityContext:
+          privileged: true
