@@ -1,6 +1,3 @@
-# infrastructure/terraform/main.tf
-# Example: Provisioning a basic AWS infrastructure for ChaosLab
-
 provider "aws" {
   region = "us-east-1"
 }
