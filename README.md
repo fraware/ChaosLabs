@@ -1,6 +1,6 @@
 # ChaosLabs: A Chaos Engineering Toolkit
 
-ChaosLab is an open-source toolkit designed for chaos engineering experiments in distributed systems. With ChaosLab you can simulate network faults, resource starvation, and process failures across multiple agents and clusters. The system comprises three main components:
+ChaosLabs is an open-source toolkit designed for chaos engineering experiments in distributed systems. With ChaosLabs you can simulate network faults, resource starvation, and process failures across multiple agents and clusters. The system comprises three main components:
 
 - **Controller:** Orchestrates chaos experiments and dispatches fault injection commands to agents.
 - **Agent:** Executes fault injection experiments (e.g., network latency, CPU stress, memory stress, process kill).
@@ -20,7 +20,7 @@ ChaosLab is an open-source toolkit designed for chaos engineering experiments in
 
 ## Architecture
 
-ChaosLab's architecture is based on a microservices design. The components interact as follows:
+ChaosLabs' architecture is based on a microservices design. The components interact as follows:
 
 ![Architecture Diagram](docs/architecture.png)
 
@@ -68,8 +68,8 @@ For detailed design diagrams and further documentation, please visit our [Wiki](
 
 1. **Clone the Repository:**
    ```bash
-   git clone https://github.com/your-username/chaoslab.git
-   cd chaoslab
+   git clone https://github.com/your-username/chaoslabs.git
+   cd chaoslabs
 
 2. **Build & Run Components Locally:**
 
@@ -91,7 +91,7 @@ For detailed design diagrams and further documentation, please visit our [Wiki](
 3. **Access the Dashboard:** Open your browser at http://localhost:5500.
 
 ## 3 Local Setup
-Please refer to the Kubernetes Documentation for detailed instructions on deploying ChaosLab using the provided manifests.
+Please refer to the Kubernetes Documentation for detailed instructions on deploying ChaosLabs using the provided manifests.
 
 ## Usage
 ### Running an Experiment
@@ -131,10 +131,10 @@ Include a `start_time` (in RFC3339 format) to schedule an experiment, or set `"p
 For more details, see the Troubleshooting Guide.
 
 ## FAQ
-**Q: Do I need root privileges to run ChaosLab?**
+**Q: Do I need root privileges to run ChaosLabs?**
 A: Yes, some fault injection methods (e.g., using `tc netem` and `stress-ng`) require root or privileged container access.
 
-**Q: Can I run ChaosLab on my local machine?**
+**Q: Can I run ChaosLabs on my local machine?**
 A: Absolutely! You can run all components locally via Docker Compose or individually using the provided scripts.
 
 **Q: How can I contribute new fault injection methods?**
@@ -147,4 +147,4 @@ For step-by-step tutorials on running chaos experiments (e.g., CPU stress test, 
 We welcome community contributions! See Contributing Guidelines for more information on how to submit issues, feature requests, and pull requests.
 
 ## License
-ChaosLab is licensed under the MIT License. See LICENSE for details.
+ChaosLabs is licensed under the MIT License. See LICENSE for details.
