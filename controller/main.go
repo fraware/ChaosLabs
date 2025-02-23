@@ -1,4 +1,3 @@
-// controller/main.go
 package main
 
 import (
