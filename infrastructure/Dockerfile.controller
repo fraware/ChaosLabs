@@ -1,4 +1,3 @@
-# infrastructure/Dockerfile.controller
 FROM golang:1.18-alpine
 WORKDIR /app
 COPY controller/go.mod .
