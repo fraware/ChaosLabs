@@ -1,4 +1,3 @@
-// controller/handlers_test.go
 package main
 
 import (
