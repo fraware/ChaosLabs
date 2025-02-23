@@ -1,4 +1,3 @@
-// agent/experiments_test.go
 package main
 
 import (
